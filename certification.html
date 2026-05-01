@@ -1,20 +1,21 @@
-<!DOCTYPE hmtl>
+<!DOCTYPE html>
 
 <html>
 	<head>
 		<title> Stephanie Bernardo | Certifications </title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 		<link rel="stylesheet" href="style.css">
 	</head>
 
-	<body>
-		<header class="top-bar">
-			<h1>SAB</h1>
-
+	<body class="bg-gradient-to-r from-[#143115] to-black">
+		<header class="flex justify-end">
 			<nav>
-				<a href="index.html">Home</a> 
-				<a href="about.html">About</a>
-				<a href="tech-stack.html">Tech Stack</a>
-				<a href="certification.html">Certifications</a>
+				<a href="index.html" class="text-sm md:text-xl">Home</a> 
+				<a href="about.html" class="text-sm md:text-xl">About</a>
+				<a href="tech-stack.html" class="text-sm md:text-xl">Tech Stack</a>
+				<a href="certification.html" class="text-sm md:text-xl text-green-400 font-bold underline">Certifications</a>
 			</nav>
 		</header>
 		
@@ -22,14 +23,57 @@
 			<h1 style="text-align: center;" > Certifications </h1> 
 		</main>
 
-		<div class = "certi">
-			<img src = "image/ms-word-associate.jpg">
-			<img src = "image/IT-specialist-java.jpg">
-			<img src = "image/ms-excel-associate.jpg">
+		<div class = "flex flex-wrap justify-center gap-12">
+			<div class = "w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 text-center">
+				<img src = "image/ms-word-associate.jpg" 
+					class = "w-full rounded cursor-pointer" 
+					onclick="openModal(this.src)">
+
+				<a href="https://drive.google.com/file/d/15Gs7jHz96GDXmLwv5NYbtOZyupXPTOFl/view?usp=drive_link" 
+					target="_blank" 
+					class="block font-bold text-green-300 pt-2 underline">MS Word Associate</a>
+				<p class="text-green-300">(Click the image to view certificate)</p>
+			</div>
+
+			<div class = "w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 text-center">
+				<img src = "image/IT-specialist-java.jpg" 
+					class = "w-full rounded cursor-pointer" 
+					onclick="openModal(this.src)">
+
+				<a href="https://drive.google.com/file/d/1cav5YocgFXmY7mhr7RxxZtsZW2xZCBFT/view?usp=drive_link" 
+					target="_blank" 
+					class="block font-bold text-green-300 pt-2 underline">IT Specialist in Java</a>
+				<p class="text-green-300">(Click the image to view certificate)</p>
+			</div>
+
+			<div class = "w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 text-center">
+				<img src = "image/ms-excel-associate.jpg" 
+					class = "w-full rounded cursor-pointer" 
+					onclick="openModal(this.src)">
+
+				<a href="https://drive.google.com/file/d/1TERkhHslDDvWaWuZBbVnyvbdbqMPM7WC/view?usp=drive_link" 
+					target="_blank" 
+					class="block font-bold text-green-300 pt-2 underline">MS Excel Associate</a>
+				<p class="text-green-300">(Click the image to view certificate)</p>
+			</div>
 		</div>
 
-		<footer>
-			<p style="text-align: center;">© 2026 Stephanie Bernardo | All Rights Reserved</p>
-		</footer>
 	</body>
+		<div id="imageModal" class="fixed inset-0 hidden bg-black/80 flex items-center justify-center z-50">
+  			<img id="modalImg" class="max-w-[90%] max-h-[90%] rounded shadow-lg">
+		</div>
+
+		<script>
+  			const modal = document.getElementById("imageModal");
+  			const modalImg = document.getElementById("modalImg");
+
+  			function openModal(src) {
+    		modal.classList.remove("hidden");
+    		modalImg.src = src;
+  			}
+
+  			modal.addEventListener("click", () => {
+    		modal.classList.add("hidden");
+ 		 	});
+		</script>
 </html>
