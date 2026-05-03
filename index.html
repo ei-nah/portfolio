@@ -6,25 +6,65 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<link rel="stylesheet" href="style.css">
 	</head>
 
-	<body class="bg-gradient-to-r from-[#143115] to-black">
-		<header class="flex justify-end">
-			<nav>
-				<a href="index.html" class="text-sm md:text-xl text-green-400 font-bold underline">Home</a> 
-				<a href="about.html" class="text-sm md:text-xl">About</a>
-				<a href="tech-stack.html" class="text-sm md:text-xl">Tech Stack</a>
-				<a href="certification.html" class="text-sm md:text-xl">Certifications</a>
+	<body class="bg-gradient-to-br from-[#0f2a14] via-[#143115] to-black">
+			<header>
+			<nav class="p-5 bg-[#111d13] shadow sm:flex sm:items-center sm:justify-between">
+				<div class="flex justify-between items-center ">
+					<span class="text-2xl text-[#4a7c59] font-bold"> SAB </span>
+					
+					<span class="text-3xl cursor-pointer mx-2 sm:hidden block"> 
+						<ion-icon name="menu" onclick="Menu(this)"></ion-icon> 
+					</span>
+				</div>
+
+				<ul class="sm:flex sm:items-center sm:static sm:opacity-100 sm:pointer-events-auto
+				z-50 absolute bg-[#111d13] w-full left-0 sm:w-auto py-4 sm:py-0 pl-7 sm:pl-0 
+				opacity-0 top-[-400px] pointer-events-none transition-all ease-in duration-500">
+					<li class="mx-4 my-6 sm:my-0"> 
+						<a href="index.html" class="text-xl md:text-xl text-[#4a7c59] hover:text-[#a1cca5] font-bold duration-500">Home</a> 
+					</li>
+					<li class="mx-4 my-6 sm:my-0"> 
+						<a href="about.html" class="text-xl text-[#4a7c59] hover:text-[#a1cca5] duration-500">About</a> 
+					</li>
+					<li class="mx-4 my-6 sm:my-0"> 
+						<a href="tech-stack.html" class="text-xl text-[#4a7c59] hover:text-[#a1cca5] duration-500">Tech Stack</a> 
+					</li>
+					<li class="mx-4 my-6 sm:my-0"> 
+						<a href="certification.html" class="text-xl text-[#4a7c59] hover:text-[#a1cca5] duration-500">Certifications</a> 
+					</li>
+				</ul>
 			</nav>
 		</header>
 		
 		<main class="flex items-center justify-center h-128">
 			<div class="flex flex-col items-center justify-center text-center min-h-screen p-2">
-				<img src="image/self-portrait.JPG" class="w-60 h-60 rounded-full object-cover">
+				<img src="image/self-portrait.JPG" class="w-60 h-60 rounded-full object-cover object-bottom">
 				<p class="text-3xl md:text-5xl font-bold text-green-200 text-center md:text-left pt-4"> Stephanie Bernardo </p>
 				<p class="mt-2 text-lg md:text-2xl text-green-200 text-center md:text-left"> A BSIT student with strong interest in web design and development. </p>
 			</div>
 		</main>
+
+		<script>
+			function Menu(e){
+    		let list = document.querySelector('ul');
+
+    		if (window.innerWidth < 640) {
+        		if(e.name === 'menu'){
+            	e.name = "close";
+            	list.classList.add('top-[80px]', 'opacity-100');
+            	list.classList.remove('pointer-events-none');
+        	} else {
+            	e.name = "menu";
+            	list.classList.remove('top-[80px]', 'opacity-100');
+            	list.classList.add('pointer-events-none');
+        		}
+    		}
+		}
+	</script>
 	</body>
 </html>
