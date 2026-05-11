@@ -59,24 +59,8 @@
 
 				</p>
 			</div>
-		</main>	
-
-		<script>
-			function Menu(e){
-    		let list = document.querySelector('ul');
-
-    		if (window.innerWidth < 640) {
-        		if(e.name === 'menu'){
-            	e.name = "close";
-            	list.classList.add('top-[80px]', 'opacity-100');
-            	list.classList.remove('pointer-events-none');
-        	} else {
-            	e.name = "menu";
-            	list.classList.remove('top-[80px]', 'opacity-100');
-            	list.classList.add('pointer-events-none');
-        			}
-    			}
-			}
-		</script>
+		</main>
+			
+		<script src="style.js"></script>
 	</body>
 </html>
